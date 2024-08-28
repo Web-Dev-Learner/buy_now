@@ -1,26 +1,66 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AboutUs from '../routes/aboutUs/AboutUs';
-import Cart from '../routes/cart/Cart';
-import ContactUs from '../routes/contactUs/ContactUs';
-import Home from '../routes/home/Home';
-import Products from '../routes/products/Products';
+// Packages
+import { createHashRouter, RouterProvider } from "react-router-dom";
+// Components
+import App from "../app/App";
+import Home from "../routes/home/Home";
+import AboutUs from "../routes/aboutUs/AboutUs";
+import Products from "../routes/products/Products";
+import ContactUs from "../routes/contactUs/ContactUs";
+import SingleProduct from "../routes/products/singleProduct/SingleProduct";
+import Cart from "../routes/cart/Cart";
+import RenderProducts from "../routes/products/renderProducts/RenderProducts";
+import ErrorPage from "../errorPage/ErrorPage";
+// Contexts
+import CartContextProvider from "../../contexts/CartContextProvider";
 
-function AppRouter() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </Router>
-  );
+export default function Router() {
+    const router = createHashRouter([
+        {
+            path: "/",
+            element: (
+                <CartContextProvider>
+                    <App />
+                </CartContextProvider>
+            ),
+            errorElement: <ErrorPage />,
+            children: [
+                {
+                    index: true,
+                    element: <Home />,
+                },
+                {
+                    path: "about-us",
+                    element: <AboutUs />,
+                },
+                {
+                    path: "products",
+                    element: <Products />,
+                    children: [
+                        {
+                            path: "/products",
+                            element: <RenderProducts />,
+                        },
+                        {
+                            path: "category/:categoryId",
+                            element: <RenderProducts />,
+                        },
+                    ],
+                },
+                {
+                    path: "products/:productId",
+                    element: <SingleProduct />,
+                },
+                {
+                    path: "contact-us",
+                    element: <ContactUs />,
+                },
+                {
+                    path: "cart",
+                    element: <Cart />,
+                },
+            ],
+        },
+    ]);
+
+    return <RouterProvider router={router} />;
 }
-
-export default AppRouter;
-
-

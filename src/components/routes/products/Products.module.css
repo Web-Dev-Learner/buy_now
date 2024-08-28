@@ -1,0 +1,18 @@
+@import "../../../styles/variables.css";
+
+.section {
+    width: 100%;
+    display: flex;
+}
+
+.divider {
+    width: 1px;
+    height: 98%;
+    background-color: #00000011;
+}
+
+@media screen and (max-width: 1000px) {
+    .section {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,56 @@
+@import "./variables.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #ededed;
+    color: var(--color-font);
+    display: flex;
+    justify-content: center;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+#root section,
+#root main {
+    flex: 1;
+}
+
+.Toastify__toast-container {
+    width: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+    #root {
+        gap: 2em;
+    }
+
+    .Toastify__toast-container {
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #root {
+        gap: 1em;
+    }
+    .Toastify__toast-container {
+        width: 100%;
+    }
+}

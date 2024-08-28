@@ -1,0 +1,102 @@
+@import "../../styles/variables.css";
+
+.keyPoints {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    font-family: var(--font-secondary);
+}
+
+.keyPoints > p {
+    max-width: 30%;
+    font-family: var(--font-secondary);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.keyPoints > p > span {
+    font-size: 2.5rem;
+    color: var(--color-main);
+}
+
+.keyPoints > .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+    justify-content: center;
+    gap: 2em;
+}
+
+.keyPoints .grid .point {
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    gap: 10px;
+    background-color: var(--color-main);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+}
+
+.keyPoints > .grid > .point > span {
+    font-size: 4rem;
+    color: white;
+    transition: all 250ms ease-in-out;
+}
+
+.keyPoints > .grid > .point:hover > span {
+    transform: scale(1.25);
+}
+
+.keyPoints > .grid > .point > h3 {
+    color: white;
+    font-family: var(--font-secondary);
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.keyPoints > .grid > .point > .hiddenDescription {
+    display: grid;
+    grid-template-rows: 0fr;
+    justify-items: center;
+    transition: all 300ms ease-in-out;
+}
+
+.keyPoints > .grid > .point:hover > .hiddenDescription {
+    grid-template-rows: 1fr;
+}
+
+.keyPoints > .grid > .point > .hiddenDescription > p {
+    overflow: hidden;
+    font-family: var(--font-main);
+    color: white;
+    text-align: center;
+    font-size: 1.25rem;
+    max-width: 75%;
+}
+
+@media screen and (max-width: 1000px) {
+    .keyPoints > p {
+        width: 75%;
+        max-width: 75%;
+    }
+
+    .keyPoints > .grid {
+        grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .keyPoints > p {
+        width: 100%;
+        max-width: initial;
+    }
+    .keyPoints > .grid > .point {
+        width: 100%;
+    }
+}
