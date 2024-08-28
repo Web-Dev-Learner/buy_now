@@ -308,7 +308,7 @@ export default function Navbar() {
                         <span className="material-symbols-rounded">menu</span>
                     </button>
                     <h1>
-                        <span>S</span>tellar <span>S</span>hop
+                        <span>BuyNow</span> <span>S</span>hop
                     </h1>
                 </>
                 <AnimatePresence>
