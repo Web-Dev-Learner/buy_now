@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./StarRating.module.css";
 
-export default function StarRating({ rate, fontSize }) {
+export default function StarRating({ rate = 0, fontSize = "2.25rem" }) {
     const rating = Math.trunc(rate);
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -26,8 +26,4 @@ export default function StarRating({ rate, fontSize }) {
 StarRating.propTypes = {
     rate: PropTypes.number,
     fontSize: PropTypes.string,
-};
-
-StarRating.defaultProps = {
-    fontSize: "2.25rem",
 };

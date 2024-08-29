@@ -219,7 +219,7 @@ export default function MainSlide() {
                     </linearGradient>
                 </defs>
             </svg>
-            <h1>Welcome To Stellar Shop</h1>
+            <h1>Welcome To BuyNow Shop</h1>
         </div>
     );
 }
