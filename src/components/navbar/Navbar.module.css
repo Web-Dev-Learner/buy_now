@@ -16,37 +16,37 @@
     border-bottom: 1px solid #00000033;
 }
 
-.navbar > .logo {
+.navbar > .logo1 {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.navbar > .logo > svg {
+.navbar > .logo1 > avif {
     width: 125px;
     height: auto;
 }
 
-.navbar > .logo > svg .moon {
+.navbar > .logo1 > svg .moon {
     transform-box: fill-box;
     transform-origin: center;
     animation: moonRotation 7s linear alternate infinite;
     transition: all 5s ease-in-out;
 }
 
-.navbar > .logo > svg .bigCloud {
+.navbar > .logo1 > svg .bigCloud {
     transform-box: fill-box;
     transform-origin: center;
     animation: cloudMovement 2s linear alternate infinite;
 }
 
-.navbar > .logo > svg .cloudRight {
+.navbar > .logo1 > svg .cloudRight {
     transform-box: fill-box;
     transform-origin: center;
     animation: cloudMovement2 3s linear alternate-reverse infinite;
 }
 
-.navbar > .logo > svg .cloudLeft {
+.navbar > .logo1 > svg .cloudLeft {
     transform-box: fill-box;
     transform-origin: center;
     animation: cloudMovement3 6s linear alternate-reverse infinite;
