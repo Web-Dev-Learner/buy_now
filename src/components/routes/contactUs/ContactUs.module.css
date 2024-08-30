@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    background-image: url("../../../assets/images/banner-background.svg");
+    background-image: url("../../../assets/images/contactus.jpg");
     background-size: cover;
 }
 
@@ -61,8 +61,8 @@
     background-color: #ffffff;
     border-radius: 15px;
     padding: 25px;
-    background-image: linear-gradient(#ffffff88, #ffffff88),
-        url("../../../assets/images/card-background.svg");
+ background-image: linear-gradient(#ffffff88, #ffffff88),
+        url("../../../assets/images/contactus.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,9 +91,12 @@
 
 .contactUs > .spacer {
     width: 100%;
-    background-image: url("../../../assets/images/spacer.svg");
-    aspect-ratio: 900 / 300;
+     background-image: url("../../../assets/images/touch.avif"); 
+    aspect-ratio: 900 / 500;
     background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .contactUs > span {

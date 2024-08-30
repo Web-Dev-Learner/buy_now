@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 100px;
     font-family: var(--font-secondary);
+    
 }
 
 .keyPoints > p {
@@ -45,7 +46,7 @@
 
 .keyPoints > .grid > .point > span {
     font-size: 4rem;
-    color: white;
+    color: rgb(249, 247, 247);
     transition: all 250ms ease-in-out;
 }
 
