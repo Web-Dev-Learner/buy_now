@@ -9,7 +9,7 @@ import ContactUs from "../routes/contactUs/ContactUs";
 import SingleProduct from "../routes/products/singleProduct/SingleProduct";
 import Cart from "../routes/cart/Cart";
 import RenderProducts from "../routes/products/renderProducts/RenderProducts";
-import ErrorPage from "../errorPage/ErrorPage";
+ import ErrorPage from "../errorPage/ErrorPage";
 // Contexts
 import CartContextProvider from "../../contexts/CartContextProvider";
 
