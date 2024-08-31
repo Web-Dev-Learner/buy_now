@@ -19,7 +19,7 @@ export default function AboutUs() {
                     alt="Products"
                 />
                 <p>
-                    At BuyNow Shop, we&apos;re your ultimate destination for
+                    At JoyfulMart, we&apos;re your ultimate destination for
                     top-quality products that shine bright. Explore a universe
                     of possibilities as you browse through our curated
                     collection of stellar goods, handpicked to elevate your
