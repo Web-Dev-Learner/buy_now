@@ -9,39 +9,40 @@ export default function ContactUs() {
             title: "Twitter",
             icon: "fa-brands fa-square-x-twitter",
             description: "Reach us through X.",
-            link: "BuyNow Shop on X",
+            link: "JoyfulMart on X",
         },
         {
             title: "Email",
             icon: "fa-solid fa-envelope",
             description: "Contact us through email.",
-            link: "BuyNow Shop's Email",
+            link: "JoyfulMart's Email",
         },
         {
             title: "Phone",
             icon: "fa-solid fa-square-phone",
             description: "Give us a call.",
-            link: "BuyNow's phone: 123-456-7890",
+            link: "JoyfulMart's phone: 123-456-7890",
         },
         {
             title: "WhatsApp",
             icon: "fa-brands fa-square-whatsapp",
             description: "Send us a message through WhatsApp.",
-            link: "BuyNow Shop's phone: 123-456-7890",
+            link: "JoyfulMart's phone: 123-456-7890",
         },
         {
             title: "Instagram",
             icon: "fa-brands fa-square-instagram",
             description: "Follow us on Instagram.",
-            link: "BuyNow Shop's Instagram page",
+            link: "JoyfulMart's Instagram page",
         },
         {
             title: "Facebook",
             icon: "fa-brands fa-square-facebook",
             description: "Follow us on Facebook.",
-            link: "BuyNow Shop's Facebook page",
+            link: "JoyfulMart's Facebook page",
         },
     ];
+    
 
     return (
         <AnimatePresence>
