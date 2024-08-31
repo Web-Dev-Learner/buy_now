@@ -1,12 +1,11 @@
-// Packages
-import { useContext, Fragment } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// contexts
 import CartContext from "../../../contexts/CartContext";
-// Styles
 import styles from "./Cart.module.css";
-// Images
 import emptyCartImage from "../../../assets/images/empty.jpg";
+// MUI Components
+import { Dialog, DialogTitle, DialogContent, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Cart() {
     const {
@@ -16,24 +15,28 @@ export default function Cart() {
         decreaseProductAmount,
     } = useContext(CartContext);
 
+    const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
-    // Get the total price for the items in the cart.
     function getTotal(cartItems) {
         let total = 0;
-        // Loop through the cart
         for (let i = 0; i < cartItems.length; i++) {
-            // if the item has the 'amount' property multiply it by its price.
             if (cartItems[i].amount) {
                 total += cartItems[i].price * cartItems[i].amount;
-                // if not just get the price of the item.
             } else {
                 total += cartItems[i].price;
             }
         }
-
         return total.toFixed(2);
     }
+
+    const handleProcessOrder = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <>
@@ -49,7 +52,7 @@ export default function Cart() {
                     />
                     <Link
                         aria-label="Go to the products section"
-                        to="/products"
+                        to="/Joyful-Mart"
                     >
                         Browse our products
                     </Link>
@@ -84,110 +87,98 @@ export default function Cart() {
                             <h3>Price</h3>
                         </div>
                         {cartItems.map((item, index) => (
-                            <Fragment key={index}>
-                                <article
-                                    aria-label={`Product: ${item.title}`}
-                                    className={styles.item}
-                                    key={index}
+                            <article
+                                aria-label={`Product: ${item.title}`}
+                                className={styles.item}
+                                key={index}
+                            >
+                                <p aria-label="Product order in the cart">
+                                    0{index + 1}
+                                </p>
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                />
+                                <div
+                                    aria-label="Product details"
+                                    className={styles.details}
                                 >
-                                    <p aria-label="Product order in the cart">
-                                        0{index + 1}
-                                    </p>
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                    />
-                                    <div
-                                        aria-label="Product details"
-                                        className={styles.details}
+                                    <h3 aria-label="Product category">
+                                        {item.category
+                                            .slice(0, 1)
+                                            .toUpperCase() +
+                                            item.category.slice(
+                                                1,
+                                                item.category.length,
+                                            )}
+                                    </h3>
+                                    <Link
+                                        to={`/products/${item.id}`}
+                                        aria-label="Go to the page of this product"
                                     >
-                                        <h3 aria-label="Product category">
-                                            {item.category
-                                                .slice(0, 1)
-                                                .toUpperCase() +
-                                                item.category.slice(
-                                                    1,
-                                                    item.category.length,
-                                                )}
-                                        </h3>
-                                        <Link
-                                            to={`/products/${item.id}`}
-                                            aria-label="Go to the page of this product"
-                                        >
-                                            <strong aria-label="Product title">
-                                                {item.title.length > 50
-                                                    ? item.title.slice(0, 50) +
-                                                      "..."
-                                                    : item.title}
-                                            </strong>
-                                        </Link>
-                                        <span aria-label="Product id">
-                                            Id: {item.id}
-                                        </span>
-                                    </div>
-                                    <div className={styles.amount}>
-                                        <button
-                                            aria-label="Decrease the quantity of this product by 1"
-                                            onClick={() => {
-                                                decreaseProductAmount(index);
-                                            }}
-                                        >
-                                            <span
-                                                className="material-symbols-rounded"
-                                                aria-hidden
-                                            >
-                                                remove
-                                            </span>
-                                        </button>
-                                        <div className={styles.separator}></div>
-                                        <span aria-label="Quantity of this product in the cart">
-                                            {item.amount}
-                                        </span>
-                                        <div className={styles.separator}></div>
-                                        <button
-                                            aria-label="Increase the quantity of this product by 1"
-                                            onClick={() => {
-                                                increaseProductAmount(index);
-                                            }}
-                                        >
-                                            <span
-                                                aria-hidden
-                                                className="material-symbols-rounded"
-                                            >
-                                                add
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <strong
-                                        aria-label="Unitary price of this product"
-                                        className={styles.price}
-                                    >
-                                        ${item.price}
-                                    </strong>
+                                        <strong aria-label="Product title">
+                                            {item.title.length > 50
+                                                ? item.title.slice(0, 50) + "..."
+                                                : item.title}
+                                        </strong>
+                                    </Link>
+                                    <span aria-label="Product id">
+                                        Id: {item.id}
+                                    </span>
+                                </div>
+                                <div className={styles.amount}>
                                     <button
-                                        aria-label="Remove this product from the cart"
+                                        aria-label="Decrease the quantity of this product by 1"
                                         onClick={() => {
-                                            removeFromCart(index);
+                                            decreaseProductAmount(index);
+                                        }}
+                                    >
+                                        <span
+                                            className="material-symbols-rounded"
+                                            aria-hidden
+                                        >
+                                            remove
+                                        </span>
+                                    </button>
+                                    <div className={styles.separator}></div>
+                                    <span aria-label="Quantity of this product in the cart">
+                                        {item.amount}
+                                    </span>
+                                    <div className={styles.separator}></div>
+                                    <button
+                                        aria-label="Increase the quantity of this product by 1"
+                                        onClick={() => {
+                                            increaseProductAmount(index);
                                         }}
                                     >
                                         <span
                                             aria-hidden
                                             className="material-symbols-rounded"
                                         >
-                                            close
+                                            add
                                         </span>
                                     </button>
-                                </article>
-                                {/* Hide the separator when it's rendering the last item */}
-                                {index === cartItems.length - 1 ? (
-                                    " "
-                                ) : (
-                                    <div
+                                </div>
+                                <strong
+                                    aria-label="Unitary price of this product"
+                                    className={styles.price}
+                                >
+                                    ${item.price}
+                                </strong>
+                                <button
+                                    aria-label="Remove this product from the cart"
+                                    onClick={() => {
+                                        removeFromCart(index);
+                                    }}
+                                >
+                                    <span
                                         aria-hidden
-                                        className={styles.separator}
-                                    ></div>
-                                )}
-                            </Fragment>
+                                        className="material-symbols-rounded"
+                                    >
+                                        close
+                                    </span>
+                                </button>
+                            </article>
                         ))}
                     </section>
                     <section
@@ -226,18 +217,49 @@ export default function Cart() {
                         <button
                             aria-label="Process the order"
                             className={styles.processOrder}
+                            onClick={handleProcessOrder}
                         >
                             Process Order
                         </button>
                         <Link
                             aria-label="Go to products section"
-                            to="/products"
+                            to="/Joyful-Mart"
                         >
                             Continue Shopping
                         </Link>
                     </section>
                 </section>
             )}
+
+            {/* Popup Dialog */}
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="order-dialog-title"
+                aria-describedby="order-dialog-description"
+            >
+                <DialogTitle
+                    id="order-dialog-title"
+                    style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+                >
+                    Order Placed
+                    <IconButton
+                        aria-label="close"
+                        onClick={handleClose}
+                        style={{ color: "red" }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                </DialogTitle>
+                <DialogContent
+                    style={{ padding: "20px", textAlign: "center" }}
+                    id="order-dialog-description"
+                >
+                    <p style={{ fontSize: "18px" }}>
+                        Thank you for your order! Your order has been placed successfully.
+                    </p>
+                </DialogContent>
+            </Dialog>
         </>
     );
 }
