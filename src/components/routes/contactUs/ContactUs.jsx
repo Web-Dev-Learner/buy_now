@@ -3,6 +3,7 @@ import styles from "./ContactUs.module.css";
 
 export default function ContactUs() {
     const contactForms = [
+        // Existing contact methods
         {
             title: "Twitter",
             icon: "fa-brands fa-square-x-twitter",
@@ -39,7 +40,24 @@ export default function ContactUs() {
             description: "Follow us on Facebook.",
             link: "JoyfulMart's Facebook page",
         },
+       
+        
+      
+        {
+            title: "YouTube",
+            icon: "fa-brands fa-youtube",
+            description: "Watch our videos on YouTube.",
+            link: "JoyfulMart's YouTube channel",
+        },
+        
+        {
+            title: "Telegram",
+            icon: "fa-brands fa-telegram",
+            description: "Message us on Telegram.",
+            link: "JoyfulMart's Telegram channel",
+        },
     ];
+    
 
     return (
         <section
