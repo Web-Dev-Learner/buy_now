@@ -48,7 +48,7 @@ export default function Navbar() {
             alt="Website logo"
             role="img"
             aria-label="Website logo"
-            src="logo1.avif"
+            src="buynow.avif"
             width="150"
             height="85"
         />

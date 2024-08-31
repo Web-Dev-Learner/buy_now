@@ -7,7 +7,7 @@ import CartContext from "../../../contexts/CartContext";
 // Styles
 import styles from "./Cart.module.css";
 // Images
-import emptyCartImage from "../../../assets/images/empty-cart.svg";
+import emptyCartImage from "../../../assets/images/empty.jpg";
 
 export default function Cart() {
     const {

@@ -1,7 +1,7 @@
 import styles from "./AboutUs.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
- import sampleProduct from "../../../assets/images/sample-product.jpg";
+ import sampleProduct from "../../../assets/images/shoes.jpg";
 
 export default function AboutUs() {
     return (
