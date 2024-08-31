@@ -1,16 +1,12 @@
 import styles from "./AboutUs.module.css";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
- import sampleProduct from "../../../assets/images/shoes.jpg";
+import sampleProduct from "../../../assets/images/shoes.jpg";
 
 export default function AboutUs() {
     return (
-        <motion.section
+        <section
             aria-label="About us section"
             className={styles.aboutUs}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
         >
             <h1>About Us</h1>
             <div className={styles.right}>
@@ -34,6 +30,6 @@ export default function AboutUs() {
                     </button>
                 </Link>
             </div>
-        </motion.section>
+        </section>
     );
 }
