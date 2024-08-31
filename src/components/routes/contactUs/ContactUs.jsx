@@ -1,5 +1,3 @@
-// Packages
-import { motion, AnimatePresence } from "framer-motion";
 // Styles
 import styles from "./ContactUs.module.css";
 
@@ -42,45 +40,38 @@ export default function ContactUs() {
             link: "JoyfulMart's Facebook page",
         },
     ];
-    
 
     return (
-        <AnimatePresence>
-            <motion.section
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className={styles.contactUs}
-                aria-label="Contact us section"
-            >
-                <div className={styles.banner}>
-                    <h1>Contact Us</h1>
-                </div>
-                <h3>
-                    We would love to hear from you{" "}
-                    <span className="material-symbols-rounded">favorite</span>
-                </h3>
-                <div className={styles.contactForms}>
-                    {contactForms.map((obj) => (
-                        <article
-                            className={styles.card}
-                            key={obj.title}
-                        >
-                            <span>
-                                <i className={obj.icon}></i>
-                            </span>
-                            <h2>{obj.title}</h2>
-                            <p>{obj.description}</p>
-                            <a href="#">
-                                <strong>{obj.link}</strong>
-                            </a>
-                        </article>
-                    ))}
-                </div>
-                <div className={styles.spacer}></div>
-                <span>Get In Touch.</span>
-            </motion.section>
-        </AnimatePresence>
+        <section
+            className={styles.contactUs}
+            aria-label="Contact us section"
+        >
+            <div className={styles.banner}>
+                <h1>Contact Us</h1>
+            </div>
+            <h3>
+                We would love to hear from you{" "}
+                <span className="material-symbols-rounded">favorite</span>
+            </h3>
+            <div className={styles.contactForms}>
+                {contactForms.map((obj) => (
+                    <article
+                        className={styles.card}
+                        key={obj.title}
+                    >
+                        <span>
+                            <i className={obj.icon}></i>
+                        </span>
+                        <h2>{obj.title}</h2>
+                        <p>{obj.description}</p>
+                        <a href="#">
+                            <strong>{obj.link}</strong>
+                        </a>
+                    </article>
+                ))}
+            </div>
+            <div className={styles.spacer}></div>
+            <span>Get In Touch.</span>
+        </section>
     );
 }

@@ -36,7 +36,6 @@
     vertical-align: middle;
     color: var(--color-main);
     font-size: 3rem;
-    animation: beating 2s ease-in-out infinite alternate;
 }
 
 .contactUs > .contactForms {
@@ -61,7 +60,7 @@
     background-color: #ffffff;
     border-radius: 15px;
     padding: 25px;
- background-image: linear-gradient(#ffffff88, #ffffff88),
+    background-image: linear-gradient(#ffffff88, #ffffff88),
         url("../../../assets/images/purple.avif"); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -91,7 +90,7 @@
 
 .contactUs > .spacer {
     width: 100%;
-     background-image: url("../../../assets/images/touch.avif"); 
+    background-image: url("../../../assets/images/touch.avif"); 
     aspect-ratio: 900 / 500;
     background-size: cover;
     background-size: contain;
@@ -112,19 +111,5 @@
 @media screen and (max-width: 500px) {
     .contactUs > .banner {
         padding: 0px 25px;
-    }
-}
-
-@keyframes beating {
-    40% {
-        transform: scale(1.2);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    60% {
-        transform: scale(1.2);
     }
 }
