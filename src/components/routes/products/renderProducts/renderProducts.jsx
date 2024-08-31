@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 // Components
 import ProductPreview from "../productPreview/ProductPreview";
 import Loader from "../loader/Loader";
@@ -45,33 +44,25 @@ export default function RenderProducts() {
             .finally(() => setIsLoading(false));
     }, [categoryId]);
 
-    if (error) <ErrorFetchingProducts error={error} />;
+    if (error) return <ErrorFetchingProducts error={error} />;
 
     if (isLoading) return <Loader />;
 
     return (
-        <AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className={styles.products}
-            >
-                {products.length === 0 ? (
-                    <ErrorFetchingProducts
-                        error={`We couldn't find the category: "${categoryId}"...`}
+        <div className={styles.products}>
+            {products.length === 0 ? (
+                <ErrorFetchingProducts
+                    error={`We couldn't find the category: "${categoryId}"...`}
+                />
+            ) : (
+                products.map((product) => (
+                    <ProductPreview
+                        product={product}
+                        key={product.id}
                     />
-                ) : (
-                    products.map((product) => (
-                        <ProductPreview
-                            product={product}
-                            key={product.id}
-                        />
-                    ))
-                )}
-            </motion.div>
-        </AnimatePresence>
+                ))
+            )}
+        </div>
     );
 }
 

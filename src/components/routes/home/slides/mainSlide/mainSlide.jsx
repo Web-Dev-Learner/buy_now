@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './MainSlide.module.css';
-import logo from "../../../../../assets/images/people.jpg";
+
 
 export default function MainSlide() {
     return (
         <div className={styles.mainSlide}>
-            <h1>Welcome To BuyNow Shop</h1>
+ <h1>
+  <span style={{ color: "white", fontSize: "3rem" }}>Welcome to </span>
+  <span style={{ color: "black", fontWeight: "bold", fontSize: "3rem" }}>Joyful</span>
+  <span style={{ color: "red", fontSize: "3rem" }}>Mart</span>
+</h1>
+
         </div>
     );
 }

@@ -3,47 +3,49 @@ import styles from "./KeyPoints.module.css";
 export default function KeyPoints() {
     const keyPoints = [
         {
-            title: "Wide Range Of Products",
+            title: "Vast Product Selection",
             description:
-                "Whether customers are looking for electronics, fashion items, home decor, or beauty products, BuyNow Shop has something for everyone.",
-            googleIcon: "sell",
+                "From cutting-edge gadgets to the latest fashion trends, JoyfulMart offers an extensive collection of products to suit every taste.",
+            googleIcon: "inventory",
         },
         {
-            title: "Secure Payment Process",
+            title: "Top-Notch Security",
             description:
-                " Customers can shop with confidence knowing that BuyNow Shop prioritizes security in online transactions.",
-            googleIcon: "lock",
+                "Shop worry-free with JoyfulMart’s secure payment gateway, ensuring your transactions are safe and protected.",
+            googleIcon: "verified_user",
         },
         {
-            title: "Responsive Customer Service",
+            title: "Exceptional Customer Support",
             description:
-                "BuyNow Shop values customer satisfaction and provides responsive customer service to address any inquiries or concerns. Customers can reach out to the support team via email, phone, or live chat for assistance.",
-            googleIcon: "support_agent",
+                "Our dedicated support team is always ready to assist, ensuring you have a smooth and satisfying shopping experience.",
+            googleIcon: "headset_mic",
         },
         {
-            title: "Personalized Recommendations",
+            title: "Tailored Shopping Experience",
             description:
-                "To enhance the shopping experience, BuyNow Shop utilizes algorithms to provide personalized product recommendations based on customer preferences and browsing history.",
-            googleIcon: "mood",
+                "Enjoy a personalized shopping journey with recommendations that match your style and preferences, thanks to our smart algorithms.",
+            googleIcon: "thumb_up",
         },
         {
-            title: "Social Media Integration",
+            title: "Engaging Social Presence",
             description:
-                "BuyNow Shop engages with customers through various social media platforms, sharing updates on new products, promotions, and events to foster a sense of community among shoppers.",
-            googleIcon: "share",
+                "Stay connected with JoyfulMart on social media for the latest updates, exclusive deals, and community engagement.",
+            googleIcon: "chat",
         },
         {
-            title: "Fast and Reliable Shipping",
+            title: "Swift Delivery Service",
             description:
-                "BuyNow Shop partners with trusted shipping providers to ensure fast and reliable delivery of orders. Customers can track their orders and expect timely arrival of their purchases.",
-            googleIcon: "local_shipping",
+                "Experience the convenience of fast and reliable shipping, with real-time tracking and prompt delivery of your orders.",
+            googleIcon: "flight_takeoff",
         },
     ];
+    
+    
 
     return (
         <div className={styles.keyPoints}>
             <p>
-                <span>BuyNow</span> <span>S</span>hop is a an e-commerce
+                <span>JoyfulMart</span>  is a an e-commerce
                 website that aims to provide customers with a seamless shopping
                 experience for a variety of products.{" "}
             </p>
