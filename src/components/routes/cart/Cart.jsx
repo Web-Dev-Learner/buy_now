@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../../../contexts/CartContext";
 import styles from "./Cart.module.css";
 import emptyCartImage from "../../../assets/images/empty.jpg";
-import { Dialog, DialogActions, DialogContent, DialogTitle, Button } from "@mui/material";
+import { Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close'; // Import the Close icon
 
 export default function Cart() {
     const {
@@ -246,14 +247,23 @@ export default function Cart() {
                 onClose={handleCloseDialog}
                 aria-labelledby="order-placed-dialog"
             >
-                <DialogTitle id="order-placed-dialog">Order Placed</DialogTitle>
+                <DialogTitle id="order-placed-dialog">
+                    Order Placed
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        onClick={handleCloseDialog}
+                        aria-label="close"
+                        sx={{ position: 'absolute', right: 8, top: 8 }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                </DialogTitle>
                 <DialogContent>
                     <p>Your order has been successfully placed!</p>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleCloseDialog} color="primary">
-                        Close
-                    </Button>
+                    {/* Optionally, you can remove this if you only want the X button */}
                 </DialogActions>
             </Dialog>
         </>
