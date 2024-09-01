@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 // Images
 import jewelery from "../../../../../assets/images/jewelery.jpg";
-import electronics from "../../../../../assets/images/electronics.jpg";
+import electronics from "../../../../../assets/images/electro.jpg";
 import menClothing from "../../../../../assets/images/men-clothing.jpg";
 import womenClothing from "../../../../../assets/images/women-clothing.jpg";
 // Styles
@@ -20,15 +20,16 @@ export default function CategoriesSlide() {
             description: "Electronics",
             link: "electronics",
         },
-        {
-            imageUrl: menClothing,
-            description: "Men Clothing",
-            link: "men's clothing",
-        },
+        
         {
             imageUrl: womenClothing,
             description: "Women Clothing",
             link: "women's clothing",
+        },
+        {
+            imageUrl: menClothing,
+            description: "Men Clothing",
+            link: "men's clothing",
         },
     ];
 
