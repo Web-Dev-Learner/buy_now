@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    background-image: url("../../../assets/images/contact.jpg");
+    background-image: url("../../../assets/images/cc.avif");
     background-size: cover;
 }
 
@@ -61,7 +61,7 @@
     border-radius: 15px;
     padding: 25px;
     background-image: linear-gradient(#ffffff88, #ffffff88),
-        url("../../../assets/images/purple.avif"); 
+        url("../../../assets/images/p.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -8,7 +8,7 @@ export default function ContactUs() {
             title: "Twitter",
             icon: "fa-brands fa-square-x-twitter",
             description: "Reach us through X.",
-            link: "JoyfulMart on X",
+            link: "JoyfulMart's Twitter page",
         },
         {
             title: "Email",
