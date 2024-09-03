@@ -1,7 +1,6 @@
 // Packages
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 // Components
 import Loader from "../loader/Loader";
@@ -51,29 +50,6 @@ export default function SingleProduct() {
         setAmountOfProducts(1);
     }
 
-    // if (error)
-    //     return (
-    //         <AnimatePresence>
-    //             <motion.div
-    //                 initial={{ opacity: 0 }}
-    //                 animate={{ opacity: 1 }}
-    //                 exit={{ opacity: 0 }}
-    //                 transition={{ duration: 0.5 }}
-    //                 className={styles.productNotFound}
-    //             >
-    //                 <h1>
-    //                     Sorry, we couldn&apos;t find the product you were
-    //                     looking for...
-    //                 </h1>
-    //                 <img
-    //                     src={productNotFound}
-    //                     alt="Product not found"
-    //                 />
-    //                 <Link to="/products">Go back to products</Link>
-    //             </motion.div>
-    //         </AnimatePresence>
-    //     );
-
     if (error) {
         return <ProductNotFound />;
     }
@@ -81,11 +57,7 @@ export default function SingleProduct() {
     if (isLoading) return <Loader />;
 
     return (
-        <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            exit={{ opacity: 0 }}
+        <main
             aria-label={`Product: ${product.title}`}
             className={styles.singleProduct}
         >
@@ -162,6 +134,6 @@ export default function SingleProduct() {
                     </button>
                 </form>
             </section>
-        </motion.main>
+        </main>
     );
 }
