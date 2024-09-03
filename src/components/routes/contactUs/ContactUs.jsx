@@ -3,7 +3,7 @@ import styles from "./ContactUs.module.css";
 
 export default function ContactUs() {
     const contactForms = [
-        // Existing contact methods
+        
         {
             title: "Twitter",
             icon: "fa-brands fa-square-x-twitter",
