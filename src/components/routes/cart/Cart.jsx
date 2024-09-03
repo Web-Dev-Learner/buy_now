@@ -4,7 +4,7 @@ import CartContext from "../../../contexts/CartContext";
 import styles from "./Cart.module.css";
 import emptyCartImage from "../../../assets/images/empty.jpg";
 import { Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close'; // Import the Close icon
+import CloseIcon from '@mui/icons-material/Close'; 
 
 export default function Cart() {
     const {
