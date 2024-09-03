@@ -200,7 +200,7 @@
     width: 95%;
     height: 5px;
     border-radius: 15px;
-    /* background-color: #f9f9f9; */
+    
     background-color: #ededed;
     align-self: center;
 }
@@ -242,7 +242,7 @@
     width: 90%;
     height: 5px;
     border-radius: 25px;
-    /* background-color: #fafafa; */
+   
     background-color: #ededed;
     align-self: center;
 }

@@ -263,7 +263,7 @@ export default function Cart() {
                     <p>Your order has been successfully placed!</p>
                 </DialogContent>
                 <DialogActions>
-                    {/* Optionally, you can remove this if you only want the X button */}
+                    
                 </DialogActions>
             </Dialog>
         </>
