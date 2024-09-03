@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-// import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome is imported
+
 
 export default function Footer() {
     return (

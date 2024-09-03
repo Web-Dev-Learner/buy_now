@@ -31,11 +31,11 @@
 }
 
 .productImage {
-    width: 40%; /* Adjusted for smaller size */
+    width: 40%; 
     height: auto;
     object-fit: cover;
     border-radius: 15px;
-    margin: 20px auto; /* Center the image */
+    margin: 20px auto; 
 }
 
 .textGrid {
@@ -43,7 +43,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Increased max-width */
+    max-width: 1200px; 
     margin: 20px 0;
 }
 
@@ -61,14 +61,14 @@
 .textGrid > .featureBox > ul > li,
 .textGrid > .testimonials > blockquote,
 .textGrid > .additionalContent > p {
-    font-size: 1.2rem; /* Uniform font size */
+    font-size: 1.2rem; 
 }
 
 .textGrid > .description > h3,
 .textGrid > .featureBox > h3,
 .textGrid > .testimonials > h3,
 .textGrid > .additionalContent > h3 {
-    font-size: 1.5rem; /* Heading size */
+    font-size: 1.5rem; 
     color: #1e128c;
     margin-bottom: 10px;
 }
@@ -80,40 +80,40 @@
     border-radius: 10px;
     font-family: var(--font-secondary);
     font-size: 1rem;
-    text-align: left; /* Align text to the left for the list items */
-    max-width: 600px; /* Limit width for better readability */
+    text-align: left; 
+    max-width: 600px; 
     margin: 0 auto; 
     width:100%;
     height:100%;
-    /* Center the box within its container */
+    
 }
 
 .featureBox > h3 {
-    text-align: center; /* Center-align the heading */
+    text-align: center; 
     margin-bottom: 15px;
     color: #1e128c;
-    font-size: 1.5rem; /* Slightly larger font size for the heading */
+    font-size: 1.5rem; 
 }
 
 .featureBox > ul {
     margin: 0;
     padding: 0;
-    list-style: none; /* Remove default bullet points */
+    list-style: none; 
 }
 
 .featureBox > ul > li {
-    margin-bottom: 15px; /* Spacing between list items */
-    position: relative; /* For positioning the custom bullet */
-    padding-left: 30px; /* Space for the bullet point */
+    margin-bottom: 15px; 
+    position: relative; 
+    padding-left: 30px; 
 }
 
 .featureBox > ul > li::before {
-    content: "\2022"; /* Unicode for a bullet point */
+    content: "\2022";
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 1.2rem; /* Size of the bullet point */
-    color: var(--color-main); /* Match bullet point color with theme */
+    font-size: 1.2rem; 
+    color: var(--color-main); 
 }
 
 
@@ -129,8 +129,8 @@
 
 .testimonials > blockquote {
     margin: 0;
-    font-size: 1.2rem; /* Slightly larger font size */
-    max-width: 80%; /* Limit width to maintain readability */
+    font-size: 1.2rem; 
+    max-width: 80%; 
 }
 
 .testimonials > p {
@@ -140,12 +140,12 @@
 }
 
 .additionalContent {
-    background-color: #f5f5f5; /* Slightly different background color */
+    background-color: #f5f5f5; 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 100%;
-    max-width: 600px; /* Increased max-width for a wider box */
+    max-width: 600px; 
     margin: 20px auto;
     height:90%
 }
@@ -163,11 +163,11 @@
     font-family: var(--font-secondary);
 }
 
-/* Button styles for additionalContent */
+
 .additionalContent > a > button {
     border-radius: 10px;
-    background-color: #2523c355; /* Base color */
-    color: rgb(43, 29, 29); /* Base text color */
+    background-color: #2523c355; 
+    color: rgb(43, 29, 29); 
     font-size: 1.25rem;
     border: none;
     padding: 10px 30px;
@@ -175,11 +175,11 @@
     cursor: pointer;
 }
 
-/* Hover effect for additionalContent button */
+
 .additionalContent > a > button:hover {
-    transform: scale(1.1); /* Enlarge button on hover */
-    background-color: var(--color-main); /* Match hover color with shopButton */
-    color: white; /* Match hover text color with shopButton */
+    transform: scale(1.1); 
+    background-color: var(--color-main); 
+    color: white; 
 }
 
 
@@ -207,9 +207,8 @@
 
 
 
-/* General styling for feature boxes */
 .featureBox {
-    /* Existing styles */
+   
     padding: 20px;
     border-radius: 10px;
     font-family: var(--font-secondary);
@@ -218,64 +217,64 @@
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
-    height: auto; /* Changed height to auto for flexibility */
+    height: auto; 
 }
 
 /* Responsive styling */
 @media (max-width: 1200px) {
     .textGrid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr; 
     }
     .productImage {
-        width: 60%; /* Adjust size for better fit on smaller screens */
+        width: 60%; 
     }
 }
 
 @media (max-width: 768px) {
     .aboutUs {
-        padding: 30px; /* Reduced padding for smaller screens */
+        padding: 30px; 
     }
     .aboutUs > h1 {
-        font-size: 2.5rem; /* Reduced font size */
+        font-size: 2.5rem; 
     }
     .aboutUs > h2 {
-        font-size: 1.5rem; /* Reduced font size */
+        font-size: 1.5rem; 
     }
     .productImage {
-        width: 80%; /* Adjust size for better fit on smaller screens */
+        width: 80%; 
     }
     .textGrid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
     }
     .featureBox,
     .testimonials,
     .additionalContent {
-        width: 90%; /* Make sure boxes fit well */
+        width: 90%; 
     }
 }
 
 @media (max-width: 480px) {
     .aboutUs {
-        padding: 20px; /* Further reduced padding */
+        padding: 20px; 
     }
     .aboutUs > h1 {
-        font-size: 1.8rem; /* Further reduced font size */
+        font-size: 1.8rem; 
     }
     .aboutUs > h2 {
-        font-size: 1.2rem; /* Further reduced font size */
+        font-size: 1.2rem; 
     }
     .productImage {
-        width: 100%; /* Full width for small screens */
+        width: 100%; 
     }
     .textGrid {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr; 
     }
     .featureBox,
     .testimonials,
     .additionalContent {
-        width: 100%; /* Full width for small screens */
+        width: 100%; 
     }
     .featureBox > ul > li::before {
-        font-size: 1rem; /* Smaller bullet point */
+        font-size: 1rem; 
     }
 }
