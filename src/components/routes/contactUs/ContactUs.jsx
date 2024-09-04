@@ -4,12 +4,7 @@ import styles from "./ContactUs.module.css";
 export default function ContactUs() {
     const contactForms = [
         
-        {
-            title: "Twitter",
-            icon: "fa-brands fa-square-x-twitter",
-            description: "Reach us through X.",
-            link: "JoyfulMart's Twitter page",
-        },
+        
         {
             title: "Email",
             icon: "fa-solid fa-envelope",
@@ -29,10 +24,22 @@ export default function ContactUs() {
             link: "JoyfulMart's phone: 123-456-7890",
         },
         {
+            title: "YouTube",
+            icon: "fa-brands fa-youtube",
+            description: "Watch our videos on YouTube.",
+            link: "JoyfulMart's YouTube channel",
+        },
+        {
             title: "Instagram",
             icon: "fa-brands fa-square-instagram",
             description: "Follow us on Instagram.",
             link: "JoyfulMart's Instagram page",
+        },
+        {
+            title: "Twitter",
+            icon: "fa-brands fa-square-x-twitter",
+            description: "Reach us through X.",
+            link: "JoyfulMart's Twitter page",
         },
         {
             title: "Facebook",
@@ -42,13 +49,6 @@ export default function ContactUs() {
         },
        
         
-      
-        {
-            title: "YouTube",
-            icon: "fa-brands fa-youtube",
-            description: "Watch our videos on YouTube.",
-            link: "JoyfulMart's YouTube channel",
-        },
         
         {
             title: "Telegram",

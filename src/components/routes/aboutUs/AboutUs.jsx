@@ -10,7 +10,7 @@ export default function AboutUs() {
             aria-label="About us section"
             className={styles.aboutUs}
         >
-            <h1>About Us</h1>
+           
             <h2 className={styles.subheading}>Your One-Stop Destination for Quality & Convenience</h2>
             <img
                 src={sampleProduct}
