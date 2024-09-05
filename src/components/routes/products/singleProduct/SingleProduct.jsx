@@ -50,6 +50,8 @@ export default function SingleProduct() {
         setAmountOfProducts(1);
     }
 
+    
+
     if (error) {
         return <ProductNotFound />;
     }

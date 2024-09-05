@@ -1,4 +1,3 @@
-// Packages
 import { createHashRouter, RouterProvider } from "react-router-dom";
 // Components
 import App from "../app/App";
@@ -8,11 +7,8 @@ import Products from "../routes/products/Products";
 import ContactUs from "../routes/contactUs/ContactUs";
 import SingleProduct from "../routes/products/singleProduct/SingleProduct";
 import Cart from "../routes/cart/Cart";
-
-import RenderProducts from "../routes/products/renderProducts/RenderProducts.jsx";
-
-
- import ErrorPage from "../errorPage/ErrorPage";
+import RenderProducts from "../routes/products/renderProducts/RenderProducts";
+import ErrorPage from "../errorPage/ErrorPage";
 // Contexts
 import CartContextProvider from "../../contexts/CartContextProvider";
 
@@ -40,7 +36,7 @@ export default function Router() {
                     element: <Products />,
                     children: [
                         {
-                            path: "/products",
+                            index: true,
                             element: <RenderProducts />,
                         },
                         {
