@@ -10,6 +10,7 @@ import styles from "./RenderProducts.module.css";
 // Images
 import serverDown from "../../../../assets/images/server-down.svg";
 
+
 function ErrorFetchingProducts({ error }) {
     return (
         <div className={styles.failedToFetchScreen}>
@@ -37,11 +38,19 @@ export default function RenderProducts() {
             categoryId
                 ? `https://fakestoreapi.com/products/category/${categoryId}`
                 : "https://fakestoreapi.com/products",
+            { 
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                mode: "cors"
+            }
         )
-            .then((response) => response.json())
-            .then((result) => setProducts(result))
-            .catch((error) => setError(error))
-            .finally(() => setIsLoading(false));
+        .then((response) => response.json())
+        .then((result) => setProducts(result))
+        .catch((error) => setError(error))
+        .finally(() => setIsLoading(false));
+        
     }, [categoryId]);
 
     if (error) return <ErrorFetchingProducts error={error} />;
