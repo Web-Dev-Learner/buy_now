@@ -37,12 +37,16 @@ export default function SingleProduct() {
     };
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${productId}`)
+        fetch(`https://fakestoreapi.com/products/${productId}`) // Direct API call without proxy
             .then((response) => response.json())
             .then((result) => setProduct(result))
             .catch((error) => setError(error))
             .finally(() => setIsLoading(false));
     }, [productId]);
+    
+    
+    
+    
 
     function handleFormSubmit(e) {
         e.preventDefault();
@@ -50,7 +54,7 @@ export default function SingleProduct() {
         setAmountOfProducts(1);
     }
 
-    
+
 
     if (error) {
         return <ProductNotFound />;
