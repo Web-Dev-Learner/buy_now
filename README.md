@@ -6,7 +6,7 @@ JoyfulMart is a modern e-commerce web application built using React, designed to
 
 - **Frontend**: React, CSS Modules, React Router, MUI
 - **API**: FakeStore API (for product data)
-- **UI Libraries**: Toastify, Font Awesome, MUI
+- **UI Libraries**: Toastify,  MUI
 - **Styling**: Google Fonts
 
 ## API
