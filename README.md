@@ -3,6 +3,13 @@
 
 JoyfulMart is a modern e-commerce web application built using React, designed to provide a seamless shopping experience. It features product listings, detailed product views, and a cart system, all while ensuring a responsive and user-friendly interface.
 
+## Live Demo
+
+You can explore the live demo of JoyfulMart here: [JoyfulMart Live Demo](https://your-live-demo-url.com)
+
+## GitHub Repository
+
+The source code for JoyfulMart can be found on GitHub: [JoyfulMart GitHub Repo](https://github.com/your-username/joyfulmart)
 ## Stack
 
 - **Frontend**: React, CSS Modules, React Router, MUI
@@ -25,7 +32,7 @@ JoyfulMart is a modern e-commerce web application built using React, designed to
   <li><b>Context API:</b> Manages global state, such as cart data, across the application.</li>
   <li><b>Font Awesome:</b> Supplies vector icons for enhanced UI elements.</li>
   <li><b>Google Fonts:</b> Utilizes custom fonts for styling the application.</li>
-  <li><b>MUI:</b> Implements Material-UI components for user interface elements, including pop-up dialogs.</li>
+  
 </ul>
 
 ## Features
@@ -37,7 +44,7 @@ JoyfulMart is a modern e-commerce web application built using React, designed to
   <li><b>Error Handling:</b> Displays error messages and illustrations for data fetching issues or missing products.</li>
   <li><b>Loading Indicators:</b> Shows a loading spinner during data fetching to enhance user experience.</li>
   <li><b>Responsive Design:</b> Adapts the layout to different screen sizes using CSS media queries for a seamless experience on all devices.</li>
-  <li><b>Order Confirmation Pop-up:</b> Utilizes MUI for a pop-up dialog to confirm the placement of an order when the "Process Order" button is clicked.</li>
+  
 </ul>
 
 ## Functions
@@ -46,8 +53,7 @@ JoyfulMart is a modern e-commerce web application built using React, designed to
   <li><b>Single Product:</b> Fetches and displays detailed product information, handles adding products to the cart, and manages quantity adjustments.</li>
   <li><b>Cart Management:</b> Functions to add, remove, and modify item quantities in the cart.</li>
   <li><b>ErrorFetchingProducts:</b> Displays error messages if there are issues fetching product data from the API.</li>
-  <li><b>Notification:</b> Shows notifications for actions like adding a product to the cart using React-Toastify.</li>
-  <li><b>Order Confirmation:</b> Uses MUI pop-ups to confirm order placement and show relevant messages.</li>
+  <li><b>Notification:</b> Shows notifications for actions like adding a product  to the cart  and order placement using React-Toastify.</li>
   <li><b>Single Page Application (SPA):</b> Fast, seamless navigation without page reloads.</li>
 </ul>
 
