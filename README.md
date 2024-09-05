@@ -9,7 +9,7 @@ You can explore the live demo of JoyfulMart here: [JoyfulMart Live Demo](https:/
 
 ## GitHub Repository
 
-The source code for JoyfulMart can be found on GitHub: [JoyfulMart GitHub Repo](https://github.com/your-username/joyfulmart)
+The source code for JoyfulMart can be found on GitHub: [JoyfulMart GitHub Repo](https://github.com/Web-Dev-Learner/buy_now?tab=readme-ov-file)
 
 ## Stack
 
