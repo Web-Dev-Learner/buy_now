@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../../../contexts/CartContext";
 import styles from "./Cart.module.css";
 import emptyCartImage from "../../../assets/images/empty.jpg";
-import { Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close'; 
+import { toast, ToastContainer } from "react-toastify"; // Import toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import toastify CSS
 
 export default function Cart() {
     const {
@@ -31,6 +31,7 @@ export default function Cart() {
 
     const handleProcessOrder = () => {
         setDialogOpen(true);
+        toast.success("You have successfully processed your order!"); // Display toast notification
     };
 
     const handleCloseDialog = () => {
@@ -39,6 +40,7 @@ export default function Cart() {
 
     return (
         <>
+            <ToastContainer /> {/* Add ToastContainer to render toast notifications */}
             {cartItems.length === 0 ? (
                 <section
                     aria-label="Empty cart section"
@@ -68,8 +70,8 @@ export default function Cart() {
                             onClick={() => navigate(-1)}
                         >
                             <span
-                                aria-hidden
                                 className="material-symbols-rounded"
+                                aria-hidden="true"
                             >
                                 arrow_back
                             </span>
@@ -90,7 +92,6 @@ export default function Cart() {
                                 <article
                                     aria-label={`Product: ${item.title}`}
                                     className={styles.item}
-                                    key={index}
                                 >
                                     <p aria-label="Product order in the cart">
                                         0{index + 1}
@@ -136,7 +137,7 @@ export default function Cart() {
                                         >
                                             <span
                                                 className="material-symbols-rounded"
-                                                aria-hidden
+                                                aria-hidden="true"
                                             >
                                                 remove
                                             </span>
@@ -153,8 +154,8 @@ export default function Cart() {
                                             }}
                                         >
                                             <span
-                                                aria-hidden
                                                 className="material-symbols-rounded"
+                                                aria-hidden="true"
                                             >
                                                 add
                                             </span>
@@ -173,8 +174,8 @@ export default function Cart() {
                                         }}
                                     >
                                         <span
-                                            aria-hidden
                                             className="material-symbols-rounded"
+                                            aria-hidden="true"
                                         >
                                             close
                                         </span>
@@ -184,7 +185,7 @@ export default function Cart() {
                                     " "
                                 ) : (
                                     <div
-                                        aria-hidden
+                                        aria-hidden="true"
                                         className={styles.separator}
                                     ></div>
                                 )}
@@ -215,7 +216,7 @@ export default function Cart() {
                             </strong>
                         </div>
                         <div
-                            aria-hidden
+                            aria-hidden="true"
                             className={styles.separator}
                         ></div>
                         <div className={styles.total}>
@@ -240,32 +241,6 @@ export default function Cart() {
                     </section>
                 </section>
             )}
-
-            {/* MUI Dialog for Order Confirmation */}
-            <Dialog
-                open={dialogOpen}
-                onClose={handleCloseDialog}
-                aria-labelledby="order-placed-dialog"
-            >
-                <DialogTitle id="order-placed-dialog">
-                    Order Placed
-                    <IconButton
-                        edge="end"
-                        color="inherit"
-                        onClick={handleCloseDialog}
-                        aria-label="close"
-                        sx={{ position: 'absolute', right: 8, top: 8 }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                </DialogTitle>
-                <DialogContent>
-                    <p>Your order has been successfully placed!</p>
-                </DialogContent>
-                <DialogActions>
-                    
-                </DialogActions>
-            </Dialog>
         </>
     );
 }
