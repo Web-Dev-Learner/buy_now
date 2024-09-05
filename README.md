@@ -10,6 +10,7 @@ You can explore the live demo of JoyfulMart here: [JoyfulMart Live Demo](https:/
 ## GitHub Repository
 
 The source code for JoyfulMart can be found on GitHub: [JoyfulMart GitHub Repo](https://github.com/your-username/joyfulmart)
+
 ## Stack
 
 - **Frontend**: React, CSS Modules, React Router, MUI
