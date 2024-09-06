@@ -37,7 +37,7 @@ export default function SingleProduct() {
     };
 
     useEffect(() => {
-        fetch(`https://dummyjson.com/products/${productId}`) // Updated to use dummyjson API
+        fetch(`https://dummyjson.com/products/${productId}`) 
             .then((response) => response.json())
             .then((result) => setProduct(result))
             .catch((error) => setError(error))
@@ -103,14 +103,14 @@ export default function SingleProduct() {
                     <button
                         onClick={(e) => {
                             e.preventDefault();
-                            setAmountOfProducts((prevAmount) => Math.max(prevAmount - 1, 1)); // Ensure minimum is 1
+                            setAmountOfProducts((prevAmount) => Math.max(prevAmount - 1, 1)); 
                         }}
                         className={styles.remove}
                     >
                         <span className="material-symbols-rounded">remove</span>
                     </button>
                     <input
-                        onChange={(e) => setAmountOfProducts(Math.max(1, e.target.value))} // Ensure minimum is 1
+                        onChange={(e) => setAmountOfProducts(Math.max(1, e.target.value))} 
                         value={amountOfProducts}
                         max="30"
                         min="1"
@@ -122,7 +122,7 @@ export default function SingleProduct() {
                     <button
                         onClick={(e) => {
                             e.preventDefault();
-                            setAmountOfProducts((prevAmount) => Math.min(prevAmount + 1, 30)); // Ensure maximum is 30
+                            setAmountOfProducts((prevAmount) => Math.min(prevAmount + 1, 30)); 
                         }}
                         className={styles.add}
                     >
