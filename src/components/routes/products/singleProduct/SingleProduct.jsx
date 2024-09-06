@@ -37,24 +37,18 @@ export default function SingleProduct() {
     };
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${productId}`) // Direct API call without proxy
+        fetch(`https://dummyjson.com/products/${productId}`) // Updated to use dummyjson API
             .then((response) => response.json())
             .then((result) => setProduct(result))
             .catch((error) => setError(error))
             .finally(() => setIsLoading(false));
     }, [productId]);
-    
-    
-    
-    
 
     function handleFormSubmit(e) {
         e.preventDefault();
         addItemToCart(product, amountOfProducts);
         setAmountOfProducts(1);
     }
-
-
 
     if (error) {
         return <ProductNotFound />;
@@ -78,25 +72,30 @@ export default function SingleProduct() {
             <section className={styles.description}>
                 <h1>{product.title}</h1>
                 <h3>
-                    {product.category.slice(0, 1).toUpperCase() +
-                        product.category.slice(1, product.category.length)}
+                    {product.category.charAt(0).toUpperCase() +
+                        product.category.slice(1)}
                 </h3>
+               
+
                 <div
-                    aria-label={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
-                    title={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
-                    className={styles.rating}
-                >
-                    <StarRating
-                        rate={product.rating.rate}
-                        fontSize="3rem"
-                    />
-                    <p>{product.rating.count} Reviews</p>
-                </div>
+    aria-label={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
+    title={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
+    className={styles.rating}
+>
+    <StarRating
+        rate={product.rating.rate}
+        fontSize="3rem"
+    />
+   
+</div>
+
+
+
                 <p>{product.description}</p>
                 <p className={styles.price}>${product.price}</p>
                 <form
                     onSubmit={(e) => {
-                        handleFormSubmit(e, product, amountOfProducts);
+                        handleFormSubmit(e);
                         notification();
                     }}
                     className={styles.amount}
@@ -104,14 +103,14 @@ export default function SingleProduct() {
                     <button
                         onClick={(e) => {
                             e.preventDefault();
-                            setAmountOfProducts((prevAmount) => prevAmount - 1);
+                            setAmountOfProducts((prevAmount) => Math.max(prevAmount - 1, 1)); // Ensure minimum is 1
                         }}
                         className={styles.remove}
                     >
                         <span className="material-symbols-rounded">remove</span>
                     </button>
                     <input
-                        onChange={(e) => setAmountOfProducts(e.target.value)}
+                        onChange={(e) => setAmountOfProducts(Math.max(1, e.target.value))} // Ensure minimum is 1
                         value={amountOfProducts}
                         max="30"
                         min="1"
@@ -123,7 +122,7 @@ export default function SingleProduct() {
                     <button
                         onClick={(e) => {
                             e.preventDefault();
-                            setAmountOfProducts((prevAmount) => prevAmount + 1);
+                            setAmountOfProducts((prevAmount) => Math.min(prevAmount + 1, 30)); // Ensure maximum is 30
                         }}
                         className={styles.add}
                     >
@@ -143,3 +142,4 @@ export default function SingleProduct() {
         </main>
     );
 }
+
