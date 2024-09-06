@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
+
 // Components
 import ProductPreview from "../productPreview/ProductPreview";
 import Loader from "../loader/Loader";
@@ -9,7 +10,6 @@ import Loader from "../loader/Loader";
 import styles from "./RenderProducts.module.css";
 // Images
 import serverDown from "../../../../assets/images/server-down.svg";
-
 
 function ErrorFetchingProducts({ error }) {
     return (
@@ -21,7 +21,7 @@ function ErrorFetchingProducts({ error }) {
             />
             <h2>Seems like we are having problems with the connection...</h2>
             <p>Error description: {error}</p>
-            <span>Please check if the URL written correctly valid.</span>
+            <span>Please check if the URL written correctly and is valid.</span>
         </div>
     );
 }
@@ -32,34 +32,35 @@ export default function RenderProducts() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    // Fetch products with CORS control
     useEffect(() => {
-        setIsLoading(true);
-        fetch(
-            categoryId
-                ? `https://fakestoreapi.com/products/category/${categoryId}`
-                : "https://fakestoreapi.com/products",
-            { 
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                mode: "cors"
+        async function fetchProducts() {
+            try {
+                setIsLoading(true);
+                const url = categoryId
+                    ? `https://fakestoreapi.com/products/category/${categoryId}`
+                    : "https://fakestoreapi.com/products";
+                const response = await fetch(url, { mode: "cors" });
+                if (!response.ok) {
+                    throw new Error('Error fetching products');
+                }
+                const result = await response.json();
+                setProducts(result);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setIsLoading(false);
             }
-        )
-        .then((response) => response.json())
-        .then((result) => setProducts(result))
-        .catch((error) => setError(error))
-        .finally(() => setIsLoading(false));
-        
+        }
+        fetchProducts();
     }, [categoryId]);
 
     if (error) return <ErrorFetchingProducts error={error} />;
-
     if (isLoading) return <Loader />;
 
     return (
         <div className={styles.products}>
-            {products.length === 0 ? (
+            {products && products.length === 0 ? (
                 <ErrorFetchingProducts
                     error={`We couldn't find the category: "${categoryId}"...`}
                 />
