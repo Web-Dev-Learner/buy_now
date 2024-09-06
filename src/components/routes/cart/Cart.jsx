@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../../../contexts/CartContext";
 import styles from "./Cart.module.css";
 import emptyCartImage from "../../../assets/images/empty.jpg";
-import { toast, ToastContainer } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css"; 
+import { toast, ToastContainer } from "react-toastify"; // Import toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import toastify CSS
 
 export default function Cart() {
     const {

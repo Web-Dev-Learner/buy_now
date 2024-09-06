@@ -57,89 +57,88 @@ export default function SingleProduct() {
     if (isLoading) return <Loader />;
 
     return (
+        
+
         <main
-            aria-label={`Product: ${product.title}`}
-            className={styles.singleProduct}
-        >
-            <ToastContainer />
-            <h1 className={styles.mobileTitle}>{product.title}</h1>
-            <div className={styles.imageContainer}>
-                <img
-                    src={product.image}
-                    alt={product.title}
-                />
-            </div>
-            <section className={styles.description}>
-                <h1>{product.title}</h1>
-                <h3>
-                    {product.category.charAt(0).toUpperCase() +
-                        product.category.slice(1)}
-                </h3>
-               
-
-                <div
-    aria-label={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
-    title={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
-    className={styles.rating}
+    aria-label={`Product: ${product.title}`}
+    className={styles.singleProduct}
 >
-    <StarRating
-        rate={product.rating.rate}
-        fontSize="3rem"
-    />
-   
-</div>
+    <ToastContainer />
+    <h1 className={styles.mobileTitle}>{product.title}</h1>
+    <div className={styles.imageContainer}>
+        <img
+            src={product.images[0]} // Updated to use the first image in the array
+            alt={product.title}
+        />
+    </div>
+    <section className={styles.description}>
+        <h1>{product.title}</h1>
+        <h3>
+            {product.category.charAt(0).toUpperCase() +
+                product.category.slice(1)}
+        </h3>
 
+        <div
+            aria-label={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
+            title={`This product has a rating of ${product.rating.rate} out of ${product.rating.count} reviews.`}
+            className={styles.rating}
+        >
+            <StarRating
+                rate={product.rating.rate}
+                fontSize="3rem"
+            />
+        </div>
 
+        <p>{product.description}</p>
+        <p className={styles.price}>${product.price}</p>
+        <form
+            onSubmit={(e) => {
+                handleFormSubmit(e);
+                notification();
+            }}
+            className={styles.amount}
+        >
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    setAmountOfProducts((prevAmount) => Math.max(prevAmount - 1, 1)); 
+                }}
+                className={styles.remove}
+            >
+                <span className="material-symbols-rounded">remove</span>
+            </button>
+            <input
+                onChange={(e) => setAmountOfProducts(Math.max(1, e.target.value))} 
+                value={amountOfProducts}
+                max="30"
+                min="1"
+                type="number"
+                name="amount"
+                id="amount"
+                required
+            />
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    setAmountOfProducts((prevAmount) => Math.min(prevAmount + 1, 30)); 
+                }}
+                className={styles.add}
+            >
+                <span className="material-symbols-rounded">add</span>
+            </button>
+            <button
+                type="submit"
+                className={styles.addToCart}
+            >
+                <span className="material-symbols-rounded">
+                    add_shopping_cart
+                </span>
+                Add to cart
+            </button>
+        </form>
+    </section>
+</main>
 
-                <p>{product.description}</p>
-                <p className={styles.price}>${product.price}</p>
-                <form
-                    onSubmit={(e) => {
-                        handleFormSubmit(e);
-                        notification();
-                    }}
-                    className={styles.amount}
-                >
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setAmountOfProducts((prevAmount) => Math.max(prevAmount - 1, 1)); 
-                        }}
-                        className={styles.remove}
-                    >
-                        <span className="material-symbols-rounded">remove</span>
-                    </button>
-                    <input
-                        onChange={(e) => setAmountOfProducts(Math.max(1, e.target.value))} 
-                        value={amountOfProducts}
-                        max="30"
-                        min="1"
-                        type="number"
-                        name="amount"
-                        id="amount"
-                        required
-                    />
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setAmountOfProducts((prevAmount) => Math.min(prevAmount + 1, 30)); 
-                        }}
-                        className={styles.add}
-                    >
-                        <span className="material-symbols-rounded">add</span>
-                    </button>
-                    <button
-                        type="submit"
-                        className={styles.addToCart}
-                    >
-                        <span className="material-symbols-rounded">
-                            add_shopping_cart
-                        </span>
-                        Add to cart
-                    </button>
-                </form>
-            </section>
-        </main>
     );
 }
 
