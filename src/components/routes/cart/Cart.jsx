@@ -1,4 +1,4 @@
-import React, { useState, useContext, Fragment } from "react";
+import React, { useContext, Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../../../contexts/CartContext";
 import styles from "./Cart.module.css";
@@ -15,7 +15,6 @@ export default function Cart() {
     } = useContext(CartContext);
 
     const navigate = useNavigate();
-    const [dialogOpen, setDialogOpen] = useState(false);
 
     function getTotal(cartItems) {
         let total = 0;
@@ -30,17 +29,12 @@ export default function Cart() {
     }
 
     const handleProcessOrder = () => {
-        setDialogOpen(true);
         toast.success("You have successfully processed your order!"); // Display toast notification
-    };
-
-    const handleCloseDialog = () => {
-        setDialogOpen(false);
     };
 
     return (
         <>
-            <ToastContainer /> {/* Add ToastContainer to render toast notifications */}
+            <ToastContainer /> 
             {cartItems.length === 0 ? (
                 <section
                     aria-label="Empty cart section"
