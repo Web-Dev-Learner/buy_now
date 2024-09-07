@@ -5,7 +5,7 @@ JoyfulMart is a modern e-commerce web application built using React, designed to
 
 ## Live Demo
 
-You can explore the live demo of JoyfulMart here: [JoyfulMart Live Demo](https://your-live-demo-url.com)
+You can explore the live demo of JoyfulMart here: [JoyfulMart Live Demo](https://web-dev-learner.github.io/buy_now/)
 
 ## GitHub Repository
 
