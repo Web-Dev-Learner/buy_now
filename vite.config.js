@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://dummyjson.com', // Updated to DummyJSON API
+        target: 'https://fakestoreapi.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

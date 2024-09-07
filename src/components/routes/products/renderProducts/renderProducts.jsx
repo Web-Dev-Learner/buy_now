@@ -83,3 +83,4 @@ RenderProducts.propTypes = {
 ErrorFetchingProducts.propTypes = {
     error: PropTypes.string,
 };
+ 

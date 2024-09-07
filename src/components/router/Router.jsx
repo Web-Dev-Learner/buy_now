@@ -1,4 +1,4 @@
-// Packages
+
 import { createHashRouter, RouterProvider } from "react-router-dom";
 // Components
 import App from "../app/App";
@@ -37,7 +37,7 @@ export default function Router() {
                     element: <Products />,
                     children: [
                         {
-                            path: "/products",
+                            index: true,
                             element: <RenderProducts />,
                         },
                         {
