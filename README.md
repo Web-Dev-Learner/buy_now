@@ -12,7 +12,7 @@ The source code for JoyfulMart can be found on GitHub: [JoyfulMart GitHub Repo](
 
 ## Stack
 
-- **Frontend**: React, CSS Modules, React Router, MUI
+- **Frontend**: ReactJS, CSS Modules, React Router.
 - **API**: FakeStore API (for product data)
 - **UI Libraries**: Toastify
 - **Styling**: Google Fonts
